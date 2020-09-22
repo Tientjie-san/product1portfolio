@@ -1,0 +1,45 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type= "text/css" href="{% static 'portfolio/profile.css' %}">
+{% endblock style%}
+{% block content %}
+<div class="content_grid">
+    <div class="row1">
+        <h1 >Profile</h1>
+    </div>
+
+    <div class="row2col2">
+        <p>{{profile.about_me}}</p>
+        <h3>Interesses</h3>
+        <ul>
+            {% for interest in interests %}
+                <li>{{interest.interest}}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Vaardigheden</h3>
+        <ul>
+            {% for vaardigheid in vaardigheden %}
+                <li>{{vaardigheid.technology}}</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    
+    <div class="row2col1">
+        <div class="card">
+            <img src="{{image.image.url}}" alt="avatar">
+            <div class="container">
+                <h4><b>{{profile}}</b></h4>
+                <ul>
+                    <li>1e jaars {{profile.profile_title}}</li>
+                    <li>telefoonnummer: {{profile.phone}} </li>
+                    <li>Adres: {{profile.adres}}, {{profile.adres.zip_code}} {{profile.adres.city}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content%}

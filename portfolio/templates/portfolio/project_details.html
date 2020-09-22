@@ -1,0 +1,19 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type= "text/css" href="{% static 'portfolio/project_details.css' %}">
+{% endblock style %}
+{% block content %}
+<p>titel: {{project.project_title}}</p>
+{% for image in images %}
+    <img src="{{image.image.url}}" alt="">
+{% endfor %}
+<p>startdatum: {{project.date_start}}</p>
+<p>einddatum: {{project.date_end}}</p>
+<p>De stakeholders: {{project.description.stakeholders}}</p>
+<p>Het probleem: {{project.description.problem}}</p>
+<p>De oplossing: {{project.description.solution}}</p>
+<p>live link: {{project.live_link}}</p>
+<p>github: {{project.github_link}}</p>
+
+{% endblock content %}

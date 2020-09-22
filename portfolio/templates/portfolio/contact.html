@@ -1,0 +1,22 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type= "text/css" href="{% static 'portfolio/contact.css' %}">
+{% endblock style%}
+{% block content %}
+<h1>Contact Me</h1>
+
+<p>Als u met me wilt samenwerken vul dan dit contactformulier in, ik probeer zo snel mogelijk te reageren!</p>
+<form method="POST"> {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="Verstuur!"> 
+    {% if messages %}
+        {% for message in messages %}
+            <div class = "{{message.tags}}">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+</form>
+{% endblock content%}

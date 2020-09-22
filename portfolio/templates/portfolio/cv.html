@@ -1,0 +1,43 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type= "text/css" href="{% static 'portfolio/cv.css' %}">
+{% endblock style%}
+{% block content %}
+
+<div class="content-grid">
+    <div class="row1">
+        <h1>CV</h1>
+    </div>
+
+    <div class="row2col1">
+    <h3>Ervaring</h3>
+    <!-- laad werkervaringen -->
+        {% for work in work_experiences %}
+            <h4>{{work.job_title}}</h4>
+            <p>{{work.job_employer}}</p>
+            <p>{{work.job_start_date}} - 
+            {% if work.job_end_date == 'null'%} 
+                heden
+            {% else %} 
+                {{work.job_end_date}}
+            {% endif %}</p> 
+        {% endfor %}
+    </div>
+
+    <div class="row2col2">
+        <h3>Opleiding</h3>
+        <!-- laad opleidingen -->
+        {% for education in educations %}
+            <h4>{{education.edu_institution}}</h4>
+            <p>{{education.edu_name}}</p>
+            <p>{{education.edu_start_date}} - 
+                {% if education.edu_end_date == 'null'%} 
+                    heden
+                {% else %} 
+                    {{education.edu_end_date}}
+                {% endif %}</p> 
+        {% endfor %}
+    </div>
+</div>
+{% endblock content%}

@@ -1,0 +1,21 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type= "text/css" href="{% static 'portfolio/home.css' %}">
+{% endblock style%}
+{% block content %}
+<div class="fill">
+    <div class="container">
+        <img class = "avatar" src="{{image.image.url}}" alt="avatar">
+        <h1>{{profile}}</h1>
+        <h2>{{profile.profile_title}}</h2>
+            <ul class="socials">
+                <li><a href="{{github.social_link}}" target="_blank">Github</a></li>
+                <li><a href="{{linkedin.social_link}}" target="_blank">Linkedin</a></li>
+                <li><a href="mailto:{{profile.profile_email}}" target="_blank">Mail me</a></li>
+            </ul>
+    </div>
+</div>
+
+
+{% endblock content %}

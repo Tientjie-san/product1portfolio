@@ -1,0 +1,22 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+{% block style %}
+<link rel="stylesheet" type= "text/css" href="{% static 'portfolio/portfolio.css' %}">
+{% endblock style%}
+{% block content %}
+    <h1>Portfolio</h1>
+    {% for project in projects%}
+        {% for image in images %}
+            {% if image.project.project_title == project.project_title%}
+                <img src="{{image.image.url}}" alt="">
+            {% endif %}
+        {% endfor %}
+    <p>{{project.project_title}}</p>
+        {% for tag in project.tag_set.all %}
+            <div class = "tag">{{tag}}</div>
+        {% endfor %}
+    <p>{{project.description.short}}</p>
+    <button><a href="{% url 'portfolio-project-detail' project.project_title %}">Discover</a></button>
+
+    {% endfor %}
+{% endblock content%}
