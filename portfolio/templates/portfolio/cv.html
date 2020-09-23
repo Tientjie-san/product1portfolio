@@ -5,12 +5,12 @@
 {% endblock style%}
 {% block content %}
 
-<div class="content-grid">
+<div class="content_grid">
     <div class="row1">
         <h1>CV</h1>
     </div>
 
-    <div class="row2col1">
+    <div class="ervaringen">
     <h3>Ervaring</h3>
     <!-- laad werkervaringen -->
         {% for work in work_experiences %}
@@ -25,7 +25,7 @@
         {% endfor %}
     </div>
 
-    <div class="row2col2">
+    <div class="vaardigheden">
         <h3>Opleiding</h3>
         <!-- laad opleidingen -->
         {% for education in educations %}
