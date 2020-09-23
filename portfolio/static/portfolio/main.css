@@ -1,5 +1,4 @@
-
-
+/* dit is de standaard layout van de site voor de navbar footer en content */
 .base_grid{
     min-height: 100vh; 
     margin: 0; 
@@ -8,18 +7,13 @@
     padding: 0;
 }
 
+/* bovenste rij */
 header{ 
     min-height:50px;
     background-color: #111111;
     font-weight: bold;
     color: whitesmoke;
        
-  }
-.title{
-    display: inline-block;
-}
-footer{ 
-    min-height:50px; 
   }
 
 .base_nav{
@@ -30,14 +24,14 @@ footer{
     padding: 10px;
     text-align:center;
     display: grid;
-    grid-template-columns: 1fr 4fr ;
+    grid-template-columns: 1fr 4fr auto auto ;
 }
 
 .base_nav ul{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* position: relative; */
+
 }
 
 .base_nav li {
@@ -45,14 +39,6 @@ footer{
     padding: 3px 20px;
 
 }
-/* .base_nav li:first-child{
-    /* position: absolute; */
-    /* left: 0; 
-    font-size: large;
-    
-
-} */
-
 
 
 .base_nav li:hover{
@@ -68,22 +54,61 @@ footer{
     color: #666666;
     
 }
-.burger{
-    margin-left: 100px;
+
+/* verstopt dat dropdown menu */
+.base_nav .dropdown{
     display: none;
 }
 
-.burger div{
-    width: 25px;
-    height: 5px;
-    background-color: whitesmoke;
-    margin: 5px;
-}
+  /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+  @media screen and (max-width: 600px) {
+    
+    .base_nav{
+      grid-template-columns: 1fr 1fr;
+    }
+    .base_nav:first-child{
+      justify-self: start;
+    }
+
+    .base_nav ul:not(:first-child):not(:last-child){
+      display: none;
+    }
+    .base_nav .dropdown {
+        display: block;
+        justify-self: end;
+
+      }
+  }
 
 
+   @media screen and (max-width: 600px) {
+    .base_nav.responsive {
+      grid-template-rows: 50px 1fr 1fr;
+    }
 
+    .base_nav.responsive ul{
+      grid-row: 1/2;
+    }
+
+    .base_nav.responsive ul.main_content{
+      display: grid;
+      grid-row: 2/3;
+      grid-template-rows: repeat(auto, 4) ;
+    }
+
+    .base_nav.responsive ul.socials_nav{
+      display: flex;
+      grid-row: 3/4;
+      justify-self: center;
+      justify-content: center;
+    }
+
+  } 
+
+ /* onderste rij */
 
 footer{
+    min-height:50px;
     display: flex;  
     width: 100%;
     background-color: #F5F5F5;
@@ -99,6 +124,8 @@ footer a:hover{
     color: #333333;
 }
 
+
+/* icons in navbar  */
 .fab {
     padding: 5px;
     font-size: 30px;
@@ -128,22 +155,3 @@ footer a:hover{
   button:hover {
     background-color: #222222;
   }
-
-    /* @media screen and (max-width: 576px) {
-        .base_nav a:not(:first-child) {display: none;}
-        .base_nav .burger {
-        float: right;
-        display: block;}
-  } */
-
-    /* @media screen and (max-width: 768px){
-        .base_grid{
-            display: none;
-        }
-    } */
-
-    /* @media screen and (max-width: 992px){
-        .base_grid{
-
-        }
-    } */
