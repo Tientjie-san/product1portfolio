@@ -1,7 +1,7 @@
 .content_grid{
     display: grid;
-    grid-template-rows: 1fr 6fr;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     height: 100%;
     gap: 10px;
     padding: 20px;
@@ -12,16 +12,31 @@
   grid-column: span 5;
   text-align: center;
 }
-
-.row2col2{
-  grid-row: 2/3;
-  grid-column: 2/5;
-}
-
-.row2col1{
-  grid-row: 2/3;
+.kaart{
+  grid-row: 2/4;
   grid-column: 1/2;
 }
+
+.about_me{
+  grid-row: 2/3;
+  grid-column: 2/5;
+  justify-self: center;
+  text-align: center;
+}
+
+.interests{
+  grid-row: 3/4;
+  grid-column: 2/3;
+  text-align: center;
+}
+
+.skills{
+  grid-row: 3/4;
+  grid-column: 4/5;
+  text-align: center;
+}
+
+
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -48,4 +63,66 @@
   img {
     border-radius: 50%;
     vertical-align: middle;
+  }
+
+  @media screen and (max-width: 800px) {
+    .content_grid{
+      grid-template-columns: 1fr !important;
+      grid-template-rows: repeat(5 , auto) !important;
+    }
+    .row1{
+      grid-column: span 1;
+    }
+
+    .kaart{
+      grid-row: 2/3;
+      grid-column: span 1;
+      justify-self: center;
+    }
+
+    .about_me{
+      grid-column: span 1 !important;
+      grid-row: 3/4;
+      justify-self: center;
+    }
+
+    .interests{
+      grid-column: span 1 !important;
+      grid-row: 4/5;
+      justify-self: center;
+    }
+
+    .skills{
+      grid-column: span 1 !important;
+      grid-row: 5/6;
+      justify-self: center;
+    }    
+  }
+
+  @media screen and (max-width: 900px) {
+    .content_grid{
+      grid-template-columns: 1fr 1fr;
+    }
+    .row1{
+      grid-column: span 2;
+    }
+    .kaart{
+      grid-row: 2/3;
+
+    }
+
+    .about_me{
+      grid-column: 2/3;
+    }
+
+    .interests{
+      grid-column: 1/2;
+      justify-self: center;
+    }
+
+    .skills{
+      grid-column: 2/3;
+      justify-self: center;
+    }
+ 
   }

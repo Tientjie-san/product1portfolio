@@ -9,28 +9,11 @@
         <h1 >Profile</h1>
     </div>
 
-    <div class="row2col2">
-        <p>{{profile.about_me}}</p>
-        <h3>Interesses</h3>
-        <ul>
-            {% for interest in interests %}
-                <li>{{interest.interest}}</li>
-            {% endfor %}
-        </ul>
-
-        <h3>Vaardigheden</h3>
-        <ul>
-            {% for vaardigheid in vaardigheden %}
-                <li>{{vaardigheid.technology}}</li>
-            {% endfor %}
-        </ul>
-
-    </div>
-    
-    <div class="row2col1">
+    <div class="kaart">
         <div class="card">
-            <img src="{{image.image.url}}" alt="avatar">
+            
             <div class="container">
+                <img src="{{image.image.url}}" alt="avatar">
                 <h4><b>{{profile}}</b></h4>
                 <ul>
                     <li>1e jaars {{profile.profile_title}}</li>
@@ -40,6 +23,31 @@
             </div>
         </div>
     </div>
+
+    <div class="about_me">
+        <h3>About me</h3>
+        <p>{{profile.about_me}}</p>
+    </div>
+
+    <div class= "interests">
+        <h3>Interesses</h3>
+        <ul>
+            {% for interest in interests %}
+                <li>{{interest.interest}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class= "skills">
+        <h3>Vaardigheden</h3>
+        <ul>
+            {% for vaardigheid in vaardigheden %}
+                <li>{{vaardigheid.technology}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    
 </div>
 
 {% endblock content%}
