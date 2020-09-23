@@ -24,7 +24,7 @@ header{
   padding: 10px;
   text-align:center;
   display: grid;
-  grid-template-columns: 1fr 4fr auto auto ;
+  grid-template-columns: 1fr 2fr 1fr auto ;
 }
 
 .base_nav ul{
