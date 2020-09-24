@@ -4,19 +4,28 @@
 <link rel="stylesheet" type= "text/css" href="{% static 'portfolio/portfolio.css' %}">
 {% endblock style%}
 {% block content %}
-    <h1>Portfolio</h1>
-    {% for project in projects%}
-        {% for image in images %}
-            {% if image.project.project_title == project.project_title%}
-                <img src="{{image.image.url}}" alt="">
-            {% endif %}
-        {% endfor %}
-    <p>{{project.project_title}}</p>
-        {% for tag in project.tag_set.all %}
-            <div class = "tag">{{tag}}</div>
-        {% endfor %}
-    <p>{{project.description.short}}</p>
-    <button><a href="{% url 'portfolio-project-detail' project.project_title %}">Discover</a></button>
+<div class="content_grid">
+    <h1 class="main_title">Portfolio</h1>
+    <div class = "utils">
+        <p>sorteer en filter</p> 
+    </div>
+    <div class="gallery">
+        {% for project in projects%}
+        <div class = "project">
+            {% for image in images %}
+                {% if image.project.project_title == project.project_title%}
+                    <img class="thumbnail" src="{{image.image.url}}" alt="">
+                {% endif %}
+            {% endfor %}
+            <p class="title">{{project.project_title}}</p>
+            <!-- {% for tag in project.tag_set.all %}
+                <div class = "tag">{{tag}}</div>
+            {% endfor %} -->
+        <p class="description">{{project.description.short}}</p>
+        <button class="discover"><a href="{% url 'portfolio-project-detail' project.project_title %}">Discover</a></button>
+        </div>
 
-    {% endfor %}
+        {% endfor %}
+    </div>
+</div>
 {% endblock content%}
