@@ -50,3 +50,12 @@
     justify-self: center;
     text-align: center;
 }
+
+.btn{
+    background-color: rgb(204, 137, 11) !important;
+} 
+
+.btn:hover{
+    color: #666666;
+    
+}

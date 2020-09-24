@@ -22,7 +22,7 @@
                 <div class = "tag">{{tag}}</div>
             {% endfor %} -->
         <p class="description">{{project.description.short}}</p>
-        <button class="discover"><a href="{% url 'portfolio-project-detail' project.project_title %}">Discover</a></button>
+        <a class="discover" href="{% url 'portfolio-project-detail' project.project_title %}"><button class=" btn">Discover</button></a>
         </div>
 
         {% endfor %}
