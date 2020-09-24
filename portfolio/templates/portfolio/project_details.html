@@ -4,16 +4,37 @@
 <link rel="stylesheet" type= "text/css" href="{% static 'portfolio/project_details.css' %}">
 {% endblock style %}
 {% block content %}
-<p>titel: {{project.project_title}}</p>
-{% for image in images %}
-    <img src="{{image.image.url}}" alt="">
-{% endfor %}
-<p>startdatum: {{project.date_start}}</p>
-<p>einddatum: {{project.date_end}}</p>
-<p>De stakeholders: {{project.description.stakeholders}}</p>
-<p>Het probleem: {{project.description.problem}}</p>
-<p>De oplossing: {{project.description.solution}}</p>
-<p>live link: {{project.live_link}}</p>
-<p>github: {{project.github_link}}</p>
-
+<div class="content_grid">
+    <div class="titel">
+        <h1>{{project.project_title}}</h1>
+    </div>
+    <div class="image_slider">
+        {% for image in images %}
+            <img src="{{image.image.url}}" alt="">
+        {% endfor %}
+    </div>
+    <div class="stakeholder">   
+        <h2>De stakeholders</h2>
+        <p>{{project.description.stakeholders}}</p>
+    </div> 
+    <div class = "problem">
+        <h2>Het probleem</h2>
+        <p>{{project.description.problem}}</p>
+    </div>
+    <div class="solution">
+        <h2>De oplossing</h2>
+        <p>{{project.description.solution}}</p>
+    </div>
+    <div class="projectlinkjes">
+        {% if project.live_link != None %}
+            <a href="{{project.live_link}}"><button class=" btn">Live</button></a>
+        {% endif %}
+        {% if project.github_link != None %}
+            <a href="{{project.github_link}}"><button class=" btn">Source</button></a>
+        {% endif %}
+    </div>
+    
+</div> 
+<!-- <p>startdatum: {{project.date_start}}</p>
+<p>einddatum: {{project.date_end}}</p> -->
 {% endblock content %}

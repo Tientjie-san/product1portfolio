@@ -155,3 +155,12 @@ button {
 button:hover {
   background-color: #222222;
 }
+
+.btn{
+  background-color: rgb(204, 137, 11) !important;
+} 
+
+.btn:hover{
+  color: #666666;
+  
+}

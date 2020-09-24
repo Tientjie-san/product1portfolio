@@ -51,15 +51,6 @@
     text-align: center;
 }
 
-.btn{
-    background-color: rgb(204, 137, 11) !important;
-} 
-
-.btn:hover{
-    color: #666666;
-    
-}
-
 @media screen and (max-width: 1200px){
     .gallery{grid-template-columns: 1fr 1fr;}
 }

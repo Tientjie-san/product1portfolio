@@ -1,0 +1,36 @@
+.content_grid{
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 100px 700px repeat(4, auto);
+}
+
+.titel{
+    grid-column: span 3;
+    text-align: center;
+}
+
+.image_slider{
+    grid-column:  2/3;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+.stakeholder{
+    grid-column: 2/3;
+}
+
+.problem{
+    grid-column: 2/3;
+    justify-self: end;
+}
+
+.solution{
+    grid-column: 2/3;
+}
+
+.projectlinkjes{
+    grid-column: 2/3;
+}
