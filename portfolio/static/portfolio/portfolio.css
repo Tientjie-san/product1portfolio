@@ -59,3 +59,11 @@
     color: #666666;
     
 }
+
+@media screen and (max-width: 1200px){
+    .gallery{grid-template-columns: 1fr 1fr;}
+}
+
+@media screen and (max-width: 750px){
+    .gallery{grid-template-columns: 1fr;}
+}
