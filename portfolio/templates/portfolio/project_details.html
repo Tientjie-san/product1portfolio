@@ -27,10 +27,10 @@
     </div>
     <div class="projectlinkjes">
         {% if project.live_link != None %}
-            <a href="{{project.live_link}}"><button class=" btn">Live</button></a>
+            <a href="{{project.live_link}}" target="_blank"><button class=" btn">Live</button></a>
         {% endif %}
         {% if project.github_link != None %}
-            <a href="{{project.github_link}}"><button class=" btn">Source</button></a>
+            <a href="{{project.github_link}}" target="_blank"><button class=" btn">Source</button></a>
         {% endif %}
     </div>
     

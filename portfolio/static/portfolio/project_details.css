@@ -33,4 +33,17 @@ img{
 
 .projectlinkjes{
     grid-column: 2/3;
+    justify-self: center;
+}
+
+@media screen and (max-width: 1200px){
+    .content_grid{grid-template-rows: 100px 500px repeat(4, auto);}
+}
+
+@media screen and (max-width: 900px){
+    .content_grid{grid-template-rows: 100px 400px repeat(4, auto);}
+}
+
+@media screen and (max-width: 600px){
+    .content_grid{grid-template-rows: 100px 300px repeat(4, auto);}
 }

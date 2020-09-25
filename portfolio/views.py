@@ -48,9 +48,6 @@ class ProjectDetailView(DetailView):
       slug_field = "project_title"
       slug_url_kwarg = "project_title"
      
-      
-
-
       def get_context_data(self, **kwargs):
           context = super().get_context_data(**kwargs) 
           project = get_object_or_404(Project, project_title =self.kwargs.get('project_title'))
