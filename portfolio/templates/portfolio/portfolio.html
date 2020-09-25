@@ -18,11 +18,16 @@
                 {% endif %}
             {% endfor %}
             <p class="title">{{project.project_title}}</p>
-            <!-- {% for tag in project.tag_set.all %}
-                <div class = "tag">{{tag}}</div>
-            {% endfor %} -->
-        <p class="description">{{project.description.short}}</p>
-        <a class="discover" href="{% url 'portfolio-project-detail' project.project_title %}"><button class=" btn">Discover</button></a>
+            <!-- meta informatie nodig voor sorteren en filteren -->
+            <div class = "meta">
+                <p class="date" >{{project.date_start}} - {{project.date_end}}</p>
+                {% for tag in project.tag_set.all %}
+                <p class = "tag">{{tag}}</p>
+                {% endfor %} 
+            </div>
+
+            <p class="description">{{project.description.short}}</p>
+            <a class="discover" href="{% url 'portfolio-project-detail' project.project_title %}"><button class=" btn">Discover</button></a>
         </div>
 
         {% endfor %}
