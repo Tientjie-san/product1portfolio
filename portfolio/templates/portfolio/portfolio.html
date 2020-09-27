@@ -12,25 +12,33 @@
         <label for="nieuw -> oud">nieuw -> oud</label><br>
         <input type="radio" id="oud -> nieuw" name="sortDate" value="oud -> nieuw">
         <label for="oud -> nieuw">oud -> nieuw</label><br>
-        <button class = "sortbutton" onclick="sortDate()">sorteer</button>
+        <button class = "sortbutton" onclick="sortDate()">Sorteer</button>
     </div>
     <div class="gallery">
         {% for project in projects%}
         <div class = "project">
             {% for image in images %}
                 {% if image.project.project_title == project.project_title%}
+                <div class="image_wrap">
                     <img class="thumbnail" src="{{image.image.url}}" alt="">
+                    <div class="meta">  
+                        <p class="date" >Datum: {{project.date_start}} -             
+                        {% if project.date_end == 'null'%} 
+                            heden
+                        {% else %} 
+                            {{project.date_end}}
+                        {% endif %}</p>
+                        <p> Technologiën gebruikt: </p>
+                        <ul>
+                            {% for tag in project.tag_set.all %}
+                            <li class="tag"> {{tag}} </li>
+                            {% endfor%}
+                        </ul>
+                    </div>
+                </div>
                 {% endif %}
             {% endfor %}
             <p class="title">{{project.project_title}}</p>
-            <!-- meta informatie nodig voor sorteren en filteren -->
-            <div class = "meta">
-                <p class="date" >{{project.date_start}} - {{project.date_end}}</p>
-                {% for tag in project.tag_set.all %}
-                <p class = "tag">{{tag}}</p>
-                {% endfor %} 
-            </div>
-
             <p class="description">{{project.description.short}}</p>
             <a class="discover" href="{% url 'portfolio-project-detail' project.project_title %}"><button class=" btn">Discover</button></a>
         </div>

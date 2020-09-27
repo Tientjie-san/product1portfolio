@@ -62,12 +62,12 @@ function sortBy(condition){
     // sorteer de projecten eerst op jaar daarna op maand
 
     if(condition==="nieuw -> oud"){
-        projecten_array.sort((a,b) => {return a.startjaar - b.startjaar});
-        projecten_array.sort((a,b) => {return a.startmaand - b.startmaand});
-    }
-    else{
         projecten_array.sort((a,b) => {return b.startjaar - a.startjaar});
         projecten_array.sort((a,b) => {return b.startmaand - a.startmaand});
+    }
+    else{
+        projecten_array.sort((a,b) => {return a.startjaar - b.startjaar});
+        projecten_array.sort((a,b) => {return a.startmaand - b.startmaand});
     }
 
     // positie van de project geeft de order aan waar de project in terecht moet komen. // style= order :

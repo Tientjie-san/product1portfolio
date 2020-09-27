@@ -19,7 +19,7 @@
 
 .sortbutton{
     margin-top: 10px;
-    margin-left: 25px;
+    margin-left: 35px;
 }
 
 .sortbutton:hover{
@@ -41,6 +41,44 @@
     /* border: 3px solid black; */
 }
 
+/* relevant styles */
+.image_wrap {
+    position: relative;
+    max-width: 350px;
+    max-height: 300px;
+    height: 300px;
+  }
+  
+.meta {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    max-width: 350px;
+    max-height: 300px;
+    height: 300px;
+    transition: opacity .2s, visibility .2s;
+}
+
+.meta p{
+      color: aqua;
+      padding-left: 10px;
+      padding-top: 10px;
+}
+
+.tag{
+    color: greenyellow;
+}
+
+.image_wrap:hover .meta{
+    visibility: visible;
+    opacity: 1;
+  }
 .thumbnail{
     grid-row: 1/2;
     vertical-align: middle;
@@ -49,9 +87,6 @@
     height: 300px;
 }
 
-.thumbnail:hover{
-    filter: brightness(0.3);
-}
 .title{
     grid-row: 2/3;
 }
@@ -64,10 +99,6 @@
     grid-row: 4/5;
     justify-self: center;
     text-align: center;
-}
-
-.meta{
-    display: none;
 }
 
 @media screen and (max-width: 1200px){
