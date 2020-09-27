@@ -5,20 +5,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{document_title}}</title>
     <link rel="stylesheet" type= "text/css" href="{% static 'portfolio/main.css' %}">
     <script src="https://kit.fontawesome.com/4ee0216cb6.js" crossorigin="anonymous"></script>
     {% block style %}{% endblock %}
 </head>
+{% if document_title == "Portfolio" %}
 <body class="base_grid" onload="projectsort()">
+{% else %}
+<body class="base_grid">
+{% endif %}
     <header>
-        
         <nav class="base_nav" id= "Basenav">
             <ul>   
                 <li style="font-size:large"><a href="{% url 'portfolio-home'%}">Sebastiaan Cales</a></li>
             </ul> 
             <ul class="main_content">
-                
                 <li><a href="{% url 'portfolio-profile'%}">Profile</a></li>
                 <li><a href="{% url 'portfolio-cv'%}">CV</a></li>
                 <li><a href="{% url 'portfolio-portfolio'%}">Portfolio</a></li>
@@ -32,7 +34,6 @@
             <ul>
                 <li><a href="javascript:void(0);" class="dropdown" onclick="toggle()">&#9776;</a></li>
             </ul>
- 
         </nav>
     </header>
     {% if messages %}
