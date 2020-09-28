@@ -38,7 +38,7 @@ def cv(request):
 
 def portfolio(request):
     context = {
-        'projects': Project.objects.all(),
+        'projects': project_date_sort(Project.objects.all()),
         'images': Image.objects.exclude(project=None).filter(thumbnail=True),
         'document_title': "Portfolio"
         

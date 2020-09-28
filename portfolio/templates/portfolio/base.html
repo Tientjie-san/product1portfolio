@@ -11,7 +11,7 @@
     {% block style %}{% endblock %}
 </head>
 {% if document_title == "Portfolio" %}
-<body class="base_grid" onload="projectsort()">
+<body class="base_grid" onload="getProjectArray()">
 {% else %}
 <body class="base_grid">
 {% endif %}

@@ -11,14 +11,14 @@ function toggle() {
 
 var projecten_array;
 
-function projectsort(){
+function getProjectArray(){
     // dit stuk haalt de titel en datum van ieder project en maakt hiervan een object en zet het weer in de  nodelist
     projecten = document.getElementsByClassName("project");
     data = [].map.call(projecten, project => {
         return(
             {
             "titel" : project.querySelector(".title").textContent ,
-            "startmaand": project.querySelector(".date").textContent.split(".")[0].trim(), 
+            "startmaand": project.querySelector(".date").textContent.split("Datum:")[1].split(".")[0].trim(), 
             "startjaar": project.querySelector(".date").textContent.split(".")[1].split("-")[0].trim()}
             );
     });
@@ -31,7 +31,6 @@ function projectsort(){
         
         projecten_array[i].startmaand = date_index(projecten_array[i].startmaand);
     }
-    sortBy("nieuw -> oud");
 }
 
 

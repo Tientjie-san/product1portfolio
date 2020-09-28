@@ -34,3 +34,21 @@ def month_index(month):
     return index[month.lower()]
 
 
+#Deze functie sorteert de queryselector van work-experiences op datum, de startdatum wordt hiervoor gebruikt. 
+# queryselector is een lijst van dictionaries. 
+
+def project_date_sort(queryselector):
+    sorted_by_year = sorted(queryselector,key = get_project_year,reverse=True) 
+    sorted_by_month = sorted(sorted_by_year, key= get_project_month, reverse=True)
+    return sorted_by_month
+    
+# de queryselector is een lijst van dictionaries, waar ieder dictionary voor een object staat.
+# dates staan in de database in de volgende format: {eerste 3 letters maand}. {jaar}
+def get_project_year(project_object):
+    year = int(project_object.date_start.split(". ")[-1]) 
+    return year
+
+def get_project_month(project_object):
+    month = project_object.date_start.split(". ")[0]
+    indexed_month = month_index(month)
+    return indexed_month
