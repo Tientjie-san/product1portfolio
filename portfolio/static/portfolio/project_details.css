@@ -6,11 +6,14 @@
 
 .breadcrumbs{
     grid-column: 1/2;
+    align-self: center;
+    text-align: center;
 }
 
 .titel{
     grid-column: 2/3;
     text-align: center;
+    align-self: center;
 }
 
 .image_slider{
@@ -60,17 +63,24 @@ grid-column: 2/3;
 
 .projectlinkjes{
     grid-column: 2/3;
+    width: 100%;
+    display: flex;
     justify-self: center;
+    justify-content: center;
+}
+
+.projectlinkjes button{
+    margin: 20px;
 }
 
 @media screen and (max-width: 1200px){
-    .content_grid{grid-template-rows: 100px 500px repeat(4, auto);}
+    .content_grid{grid-template-rows: 100px 500px repeat(5, auto);}
 }
 
 @media screen and (max-width: 900px){
-    .content_grid{grid-template-rows: 100px 400px repeat(4, auto);}
+    .content_grid{grid-template-rows: 100px 400px repeat(5, auto);}
 }
 
 @media screen and (max-width: 600px){
-    .content_grid{grid-template-rows: 100px 300px repeat(4, auto);}
+    .content_grid{grid-template-rows: 100px 300px repeat(5, auto);}
 }

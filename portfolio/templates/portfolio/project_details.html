@@ -15,37 +15,10 @@
         <h1>{{project.project_title}}</h1>
     </div>
     <div class="image_slider">
+        <div class="images"></div>
         {% for image in images %}
             <img src="{{image.image.url}}" alt="">
         {% endfor %}
-        <!-- <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <img src="img_nature_wide.jpg" style="width:100%">
-            <div class="text">Caption Text</div>
-          </div>
-          
-          <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
-            <img src="img_snow_wide.jpg" style="width:100%">
-            <div class="text">Caption Two</div>
-          </div>
-          
-          <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
-            <img src="img_mountains_wide.jpg" >
-          </div>
-          
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-          
-          </div>
-          <br>
-          
-          <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span>  -->
-
     </div>
     <div class="stakeholder">   
         <h2>De stakeholders</h2>
@@ -75,10 +48,6 @@
             <a href="{{project.github_link}}" target="_blank"><button class=" btn">Source</button></a>
         {% endif %}
     </div>
-
-    
 </div> 
-<!-- <p>startdatum: {{project.date_start}}</p>
-<p>einddatum: {{project.date_end}}</p> -->
 <script type="text/javascript" src="{% static 'portfolio/slide.js' %}"></script>
 {% endblock content %}
