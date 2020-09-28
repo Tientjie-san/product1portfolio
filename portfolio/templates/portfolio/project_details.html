@@ -5,6 +5,12 @@
 {% endblock style %}
 {% block content %}
 <div class="content_grid">
+    <div class ="breadcrumbs">
+        <ol>
+            <li><a href="{% url 'portfolio-portfolio' %}">Portfolio/</a></li>
+            <li><a href="{% url 'portfolio-project-detail' project.project_title %}">{{project.project_title}}</a></li>
+        </ol>
+    </div>
     <div class="titel">
         <h1>{{project.project_title}}</h1>
     </div>
@@ -12,7 +18,7 @@
         {% for image in images %}
             <img src="{{image.image.url}}" alt="">
         {% endfor %}
-        <div class="mySlides fade">
+        <!-- <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
             <img src="img_nature_wide.jpg" style="width:100%">
             <div class="text">Caption Text</div>
@@ -38,7 +44,7 @@
           <div style="text-align:center">
             <span class="dot" onclick="currentSlide(1)"></span> 
             <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span>  -->
 
     </div>
     <div class="stakeholder">   
@@ -53,6 +59,14 @@
         <h2>De oplossing</h2>
         <p>{{project.description.solution}}</p>
     </div>
+    <div class="technologies">
+        <h2>Technologiën gebruikt:</h2>
+        <ul>
+            {% for tag in project.tag_set.all %}
+            <li class="tag"> {{tag}} </li>
+            {% endfor%}
+        </ul>
+    </div>
     <div class="projectlinkjes">
         {% if project.live_link != None %}
             <a href="{{project.live_link}}" target="_blank"><button class=" btn">Live</button></a>
@@ -61,6 +75,7 @@
             <a href="{{project.github_link}}" target="_blank"><button class=" btn">Source</button></a>
         {% endif %}
     </div>
+
     
 </div> 
 <!-- <p>startdatum: {{project.date_start}}</p>

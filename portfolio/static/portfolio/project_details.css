@@ -1,16 +1,39 @@
 .content_grid{
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
-    grid-template-rows: 100px 700px repeat(4, auto);
+    grid-template-rows: 100px 700px repeat(5, auto);
+}
+
+.breadcrumbs{
+    grid-column: 1/2;
 }
 
 .titel{
-    grid-column: span 3;
+    grid-column: 2/3;
     text-align: center;
 }
 
 .image_slider{
     grid-column:  2/3;
+}
+
+ol{
+    list-style: none;
+    list-style-type: none;
+}
+
+ol li{
+    display: inline;
+}
+
+ol li a{
+    text-decoration: underline;
+    color: #111111;
+    font-weight: bold;
+}
+
+ol li a:hover{
+    color: #666666;
 }
 
 img{
@@ -29,6 +52,10 @@ img{
 
 .solution{
     grid-column: 2/3;
+}
+
+.technologies{
+grid-column: 2/3;
 }
 
 .projectlinkjes{
