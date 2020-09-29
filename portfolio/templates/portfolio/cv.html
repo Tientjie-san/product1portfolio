@@ -10,34 +10,38 @@
         <h1>CV</h1>
     </div>
 
-    <div class="ervaringen">
-    <h3>Ervaring</h3>
-    <!-- laad werkervaringen -->
-        {% for work in work_experiences %}
-            <h4>{{work.job_title}}</h4>
-            <p>{{work.job_employer}}</p>
-            <p>{{work.job_start_date}} - 
-            {% if work.job_end_date == 'null'%} 
-                heden
-            {% else %} 
-                {{work.job_end_date}}
-            {% endif %}</p> 
-        {% endfor %}
-    </div>
-
-    <div class="vaardigheden">
-        <h3>Opleiding</h3>
-        <!-- laad opleidingen -->
-        {% for education in educations %}
-            <h4>{{education.edu_institution}}</h4>
-            <p>{{education.edu_name}}</p>
-            <p>{{education.edu_start_date}} - 
-                {% if education.edu_end_date == 'null'%} 
+    <div class="row2">
+        <div class="ervaringen">
+        <h3>Ervaring</h3>
+        <!-- laad werkervaringen -->
+            {% for work in work_experiences %}
+                <h4>{{work.job_title}}</h4>
+                <p>{{work.job_employer}}</p>
+                <p>{{work.job_start_date}} - 
+                {% if work.job_end_date == 'null'%} 
                     heden
                 {% else %} 
-                    {{education.edu_end_date}}
+                    {{work.job_end_date}}
                 {% endif %}</p> 
-        {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="between">
+            <hr>
+        </div>
+        <div class="vaardigheden">
+            <h3>Opleiding</h3>
+            <!-- laad opleidingen -->
+            {% for education in educations %}
+                <h4>{{education.edu_institution}}</h4>
+                <p>{{education.edu_name}}</p>
+                <p>{{education.edu_start_date}} - 
+                    {% if education.edu_end_date == 'null'%} 
+                        heden
+                    {% else %} 
+                        {{education.edu_end_date}}
+                    {% endif %}</p> 
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock content%}
