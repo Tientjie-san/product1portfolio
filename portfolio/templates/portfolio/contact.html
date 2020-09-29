@@ -4,19 +4,30 @@
 <link rel="stylesheet" type= "text/css" href="{% static 'portfolio/contact.css' %}">
 {% endblock style%}
 {% block content %}
-<h1>Contact</h1>
 
-<p>Als u met me wilt samenwerken vul dan dit contactformulier in, ik probeer zo snel mogelijk te reageren!</p>
-<form method="POST"> {%csrf_token%}
-    {{form.as_p}}
-    <input type="submit" value="Verstuur!"> 
-    {% if messages %}
-        {% for message in messages %}
-            <div class = "{{message.tags}}">
-                {{message}}
-            </div>
-        {% endfor %}
-    {% endif %}
+<div class="content_grid">
+    <h1 class="main_title">Contact</h1>
+    <p class="form_intro">Als u met me wilt samenwerken vul dan dit contactformulier in, ik probeer zo snel mogelijk te reageren!</p>
+    <form class="super_form" method="POST"> {%csrf_token%}
+        <table>
+        {{form.as_table}}
+        </table>
+        <div class="verstuur">
+            <button>
+            <input type="submit" value="Verstuur!"> 
+            </button>
+        </div>
 
-</form>
+
+
+        {% if messages %}
+            {% for message in messages %}
+                <div class = "{{message.tags}}">
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </form>
+</div>
 {% endblock content%}

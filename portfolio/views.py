@@ -59,10 +59,6 @@ class ProjectDetailView(DetailView):
           context['document_title'] = project.project_title
           return context
 
-
-     
-
-
 def contact(request):
     form = ContactForm(request.POST or None)
     if form.is_valid():

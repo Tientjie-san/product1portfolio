@@ -1,3 +1,54 @@
 .succes{
     color: green;
 }
+
+.content_grid{
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 10px;
+    padding: 20px;
+}
+
+.main_title{
+    text-align: center;
+}
+
+.form_intro{
+    text-align: center;
+}
+
+.super_form{
+    justify-self: center;
+}
+input[type="submit"]{
+    background:none;
+    border:none;
+    color: white;
+}
+
+input[type="submit"]:hover{
+    color: #666666;
+    cursor: pointer;
+    outline: none;
+}
+.verstuur{
+    width: 100%;
+    text-align: center;
+}
+
+textarea{
+    width: 700px;
+    height: 300px;
+}
+
+@media screen and (max-width: 950px){
+    textarea{width: 500px;}
+}
+
+@media screen and (max-width: 650px){
+    textarea{width: 400px;}
+}
+
+@media screen and (max-width: 550px){
+    textarea{width: 300px;}
+}
