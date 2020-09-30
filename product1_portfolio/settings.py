@@ -66,7 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # 'portfolio.context_processors.add_variable_to_context'
+                'portfolio.context_processors.add_variable_to_context'
             ],
         },
     },
@@ -78,6 +78,7 @@ AUTH_USER_MODEL = 'account.User'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+## database voor local.
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -85,10 +86,13 @@ AUTH_USER_MODEL = 'account.User'
 #     }
 # }
 
+
 # import dj_database_url
 # db_from_env = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'].update(db_from_env)
 
+
+# DATABASE voor heroku
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -101,18 +105,6 @@ DATABASES = {
     }
 }
 # postgres://ssnrheradadtez:f7dfa81d5bde21a157f5feb43edc0d9692781d134d9b4d969f50ffc9f1a26b5d@ec2-54-75-199-252.eu-west-1.compute.amazonaws.com:5432/d2j06hav93fu4m
-# POSTGRES
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'test',
-#         'USER': 'tientjieit',
-#         'PASSWORD': 'Asianporn69',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
-#     }
-# }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
