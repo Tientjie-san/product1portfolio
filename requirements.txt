@@ -1,5 +1,6 @@
 certifi==2019.11.28
 chardet==3.0.4
+dj-database-utl==0.5.0
 Django==3.1.1
 django-heroku==0.3.1
 gunicorn==20.0.4
@@ -12,4 +13,5 @@ requests==2.22.0
 six==1.14.0
 sqlparse==0.2.4
 urllib3==1.25.8
+whitenoise==5.2.0
 

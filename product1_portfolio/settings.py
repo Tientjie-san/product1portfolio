@@ -26,7 +26,7 @@ SECRET_KEY = '21&u-v0iff^0%n0o@sml_vv$zt7!81hl8j#l61-ol5(b60=!*q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://sebastiaanportfolio.herokuapp.com/']
 
 
 # Application definition
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware'
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'product1_portfolio.urls'
@@ -84,6 +84,11 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
 
 # POSTGRES
 # DATABASES = {
@@ -138,6 +143,10 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = BASE_DIR/'media'
 MEDIA_URL = '/media/'
+
+
+STATICFILES_DIRS = BASE_DIR/'static',
+
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
