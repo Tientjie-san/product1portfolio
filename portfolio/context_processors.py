@@ -1,8 +1,8 @@
-from portfolio.models import *
+# from portfolio.models import *
 
-def add_variable_to_context(request):
+# def add_variable_to_context(request):
 
-    return {
-        'github': Social.objects.get(social_name='Github'),
-        'linkedin': Social.objects.get(social_name='Linkedin'),
-    }
+#     return {
+#         'github': Social.objects.get(social_name='Github'),
+#         'linkedin': Social.objects.get(social_name='Linkedin'),
+#     }
