@@ -26,7 +26,7 @@ SECRET_KEY = '21&u-v0iff^0%n0o@sml_vv$zt7!81hl8j#l61-ol5(b60=!*q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://sebastiaanportfolio.herokuapp.com/']
+ALLOWED_HOSTS = ['https://sebastiaanportfolio.herokuapp.com/', 'localhost']
 
 
 # Application definition
@@ -78,18 +78,29 @@ AUTH_USER_MODEL = 'account.User'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd2j06hav93fu4m',
+        'HOST': 'ec2-54-75-199-252.eu-west-1.compute.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'ssnrheradadtez' ,
+        'PASSWORD': 'f7dfa81d5bde21a157f5feb43edc0d9692781d134d9b4d969f50ffc9f1a26b5d'
+
     }
 }
-
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
-
-
+# postgres://ssnrheradadtez:f7dfa81d5bde21a157f5feb43edc0d9692781d134d9b4d969f50ffc9f1a26b5d@ec2-54-75-199-252.eu-west-1.compute.amazonaws.com:5432/d2j06hav93fu4m
 # POSTGRES
 # DATABASES = {
 #     'default': {
