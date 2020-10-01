@@ -13,7 +13,14 @@
     </div>
     <div class="titel">
         <h1>{{project.project_title}}</h1>
+        <p>Datum: {{project.date_start}} -             
+            {% if project.date_end == 'null'%} 
+                heden
+            {% else %} 
+                {{project.date_end}}
+            {% endif %}</p>
     </div>
+
 
     <div class="slideshow-row">
         

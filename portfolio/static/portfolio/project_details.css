@@ -15,6 +15,9 @@
     text-align: center;
     align-self: center;
 }
+.titel{
+    font-size: small;
+}
 
 ol{
     list-style: none;
