@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import django_heroku
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,10 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '21&u-v0iff^0%n0o@sml_vv$zt7!81hl8j#l61-ol5(b60=!*q'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['https://sebastiaanportfolio.herokuapp.com/', 'localhost']
 
@@ -155,7 +156,6 @@ MEDIA_URL = '/media/'
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
-import os
 # env variables
 
 AWS_ACCESS_KEY_ID= os.environ.get('AWS_ACCESS_KEY_ID')
