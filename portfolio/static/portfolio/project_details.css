@@ -15,13 +15,18 @@
     text-align: center;
     align-self: center;
 }
-.titel{
+.titel h1{
+    margin-bottom: 10px;;
+}
+.titel p{
     font-size: small;
+    margin-top: 0px;
 }
 
 ol{
     list-style: none;
     list-style-type: none;
+    padding: 0px;
 }
 
 ol li{
@@ -95,7 +100,6 @@ img{
 
 .problem{
     grid-column: 2/3;
-    justify-self: end;
 }
 
 .solution{
@@ -133,4 +137,53 @@ grid-column: 2/3;
 
 @media screen and (max-width: 600px){
     .content_grid{grid-template-rows: 100px 300px repeat(5, auto);}
+}
+
+@media screen and (max-width: 500px){
+    .content_grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 100px 300px repeat(5, auto);
+        padding: 10px;
+    }
+
+    .breadcrumbs{
+        grid-row: 1/2;
+        grid-column: span 1;
+    }
+
+    .titel{
+        grid-row: 2/3;
+        grid-column: span 1;
+    }
+
+    .slideshow-row{
+        grid-row: 3/4;
+        grid-column: span 1;
+    }
+
+    .stakeholder{
+        grid-row: 4/5;
+        grid-column: span 1;
+    }
+
+    .problem{
+        grid-row: 5/6;
+        grid-column: span 1;
+    }
+
+    .solution{
+        grid-row: 6/7;
+        grid-column: span 1;
+    }
+
+    .technologies{
+        grid-row: 7/8;
+        grid-column: span 1;
+    }
+
+    .projectlinkjes{
+        grid-row: 8/9;
+        grid-column: span 1;
+    }
+    
 }
