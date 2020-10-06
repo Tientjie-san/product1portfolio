@@ -20,7 +20,7 @@ class Profile(models.Model):
 		return self.first_name + " " + self.last_name
 		
 class Interest(models.Model):
-	interest = models.TextField(primary_key=True)
+	interest = models.CharField(primary_key=True, max_length=100)
 	profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
 	def __str__(self):
@@ -110,6 +110,7 @@ class Contact(models.Model):
 	contact_subject = models.CharField(max_length=100)
 	contact_name = models.CharField(max_length=100)
 	contact_description = models.TextField()
+	contact_date = models.DateTimeField(auto_now_add=True)
 	profile = models.ForeignKey(Profile, on_delete=models.CASCADE, default=1)
 	def __str__(self):
 		return self.contact_email
